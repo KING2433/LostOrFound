@@ -2,7 +2,7 @@ var Bmob = require("../../utils/bmob.js");
 
 Page({
 	data: {
-    
+    path:'/image/empty.jpg'    
   },
   onPullDownRefresh:function(){
     setTimeout(()=>{

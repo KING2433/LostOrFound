@@ -1,7 +1,8 @@
 <view class="container">
 	<view class="image-container">
-		<image src="{{Inf.Picture.url}}" class="head-image"></image>
-	</view>
+		<image wx:if='{{Inf.Picture.url}}' src="{{Inf.Picture.url}}" class="head-image"></image>
+    <image wx:if='{{!Inf.Picture.url}}' src="{{path}}" class="head-image"></image>
+  </view>
 	<view class="index-container">
 		<view>
 			<text>物品属性:</text>

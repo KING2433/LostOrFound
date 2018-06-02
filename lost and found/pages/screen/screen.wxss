@@ -151,18 +151,21 @@
 }
 
 .index-input {
-  margin-top: 30rpx;
+
   width: 93%;
   box-shadow: 0rpx 0rpx 14rpx grey;  
-  height: 45rpx;
+  height: 70rpx;
   border: 2px solid white;
   /* border-radius: 10rpx; */
+  text-align: center;
+  line-height: 70rpx;
   outline: none;
-  background: white;
+  background: #f8f3dd;
   color: #9e9c9c;
-
   border-radius: 7rpx;
+  margin-left: 0rpx;
 }
+
 .index-button {
   position: absolute;
   right: 20rpx;

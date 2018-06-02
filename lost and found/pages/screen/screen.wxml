@@ -65,7 +65,7 @@
       <block wx:for="{{tabs}}">
         <view id="{{index}}" bindtap="tabClick">
           <block wx:if="{{index==clickId}}">
-            <view class="CLchoose_user_item" style="background:red">{{item}}</view>
+            <view class="CLchoose_user_item" style="background:#e4b088">{{item}}</view>
           </block>
           <block wx:else>
             <view class="CLchoose_user_item">{{item}}</view>
@@ -81,7 +81,7 @@
       <block wx:for="{{tabs1}}">
         <view id="{{index}}" bindtap="tabClick1">
           <block wx:if="{{index==clickIdtwo}}">
-            <view class="CLchoose_user_item" style="background:red">{{item}}</view>
+            <view class="CLchoose_user_item" style="background:#e4b088">{{item}}</view>
           </block>
           <block wx:else>
             <view class="CLchoose_user_item">{{item}}</view>
@@ -97,7 +97,7 @@
       <block wx:for="{{tabs2}}">
         <view id="{{index}}" bindtap="tabClick2">
           <block wx:if="{{index==clickIdthree}}">
-            <view class="CLchoose_user_item" style="background:red">{{item}}</view>
+            <view class="CLchoose_user_item" style="background:#e4b088">{{item}}</view>
           </block>
           <block wx:else>
             <view class="CLchoose_user_item">{{item}}</view>
@@ -113,9 +113,7 @@
     <!-- 主页tab -->
     <view class='index-thewholepage'>
       <view class='index-frontview'>
-        <input class='index-input' type="text" placeholder="搜索从这里开始..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"></input>
-        <input type="submit" value="点击" bindtap='showview' class='CLsearch_button'> </input>
-        
+        <input class='index-input' type="text" placeholder="搜索从这里开始..." value="{{inputVal}}" focus="{{inputShowed}}"bindtap='showview'></input>
       </view>
     </view>
     <block wx:for="{{Things}}" wx:for-item="item">

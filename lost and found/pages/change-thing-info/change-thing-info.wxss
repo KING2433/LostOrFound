@@ -38,6 +38,10 @@
     float: left;
 }
 
+.fun{
+    margin-top: -18rpx;
+}
+
 .time_picker{
     float: left;
     width: 400rpx;
@@ -66,6 +70,7 @@
 }
 
 .submit_button{
+    float: left;
     margin: 50rpx 0 50rpx 10%; 
     width: 260rpx;
     height: 100rpx;
@@ -79,6 +84,7 @@
     color: #366a92;
 }
 .delete_button{
+    float: left;
     margin: 50rpx 0 50rpx 10%;
     width: 260rpx;
     height: 100rpx;

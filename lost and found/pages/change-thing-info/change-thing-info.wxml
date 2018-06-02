@@ -1,78 +1,55 @@
 <view>
 	<form bindsubmit="formSubmit" class="form_container">
-		<!-- <view class="goods_types left_dis">
-	    	<radio-group name="lost_or_found">
-	    		<text>物品属性 :</text>
-            <picker value="{{state[n_s]}}" range='{{state}}' bindchange="chooseState">
-		      	<label><radio value="lost" class="typeradio"  bindtap='lost' checked=''/>丢失</label>
-		      	<label><radio value="found" class="typeradio" bindtap='found'/>拾取</label>
-	    	</radio-group>
-  		</view> -->
 		<view class="left_dis">
-			<text>图片</text>
-      <!-- <image src="{{tempFilePaths}}"></image> -->
 			<view bindtap="chooseimage" class="image_container">
   				<image src="{{tempFilePaths}}" class="upload_image"></image>
  			</view>
 		</view>
 
     <view class="left_dis">
-			<picker bindchange="chooseState" value="{{state[n_s]}}" range="{{state}}" name="state">
-    			<view>
-      				<text>物品属性 :</text>
-      				<text class="choose_result">{{state[n_s]}}</text>
-    			</view>
-  			</picker>
+		<view>
+			<text>物品属性 :</text>
+			<text class="choose_result">{{state[n_s]}}</text>
 		</view>
+	</view>
     
     <view class="as_br"></view>
 
     <view class="left_dis">
-			<picker bindchange="chooseSTATE" value="{{State[n_S]}}" range="{{State}}" name="State">
-    			<view>
-      				<text>状态:</text>
-      				<text class="choose_result">{{State[n_S]}}</text>
-    			</view>
-  			</picker>
-		</view>
-
+		<text>状态:</text>
+		<text class="choose_result">{{State[n_S]}}</text>	
+	</view>
 		<view class="as_br"></view>
 
-		 <view>
+	<View>
+		<view>
 	    	<text class="time_text left_dis">时间 :</text>
-	    	 <!-- <input name="time" style="float: left;" class="time_input" bindinput='timeInput' />  -->
-	    	<!-- <picker mode="date" value="{{date}}" start="2018-01-01" end="2019-01-01" bindchange="chooseTime" class="time_picker"> -->
-			    <view>{{thing.createdAt}}</view>
-	  		<!-- </picker> -->
+			<view>{{thing.createdAt}}</view>
 	    </view>
-  		
-		<view class="as_br br_clear"></view> 
+		<view class="as_br br_clear fun"></view> 
+	</View>
 
 		<view class="left_dis">
-			<picker bindchange="choosePlace" value="{{place[n_p]}}" range="{{place}}" name="place">
-    			<view>
-      				<text>地点 :</text>
-      				<text class="choose_result">{{place[n_p]}}</text>
-    			</view>
-  			</picker>
+			<view>
+  				<text>地点 :</text>
+  				<text class="choose_result">{{place[n_p]}}</text>
+			</view>
 		</view>
 		
 		<view class="as_br"></view>
 
 		<view class="left_dis">
-			<picker bindchange="chooseGoods" value="{{goods_types[n_c]}}" range="{{goods_types}}" name="types">
-			    <view>
-			      	<text>物品类别 :</text>
-			      	<text class="choose_result">{{goods_types[n_c]}}</text>
-			    </view>
-			</picker>
+		    <view>
+		      	<text>物品类别 :</text>
+		      	<text class="choose_result">{{goods_types[n_c]}}</text>
+		    </view>
 		</view>
 
 		<view class="as_br"></view>
 
 		<view class="left_dis">
 			<text>物品描述</text>
-			<textarea name="description" id="" cols="30" rows="10" placeholder="(不得超过150字)" class="description" bindinput='descriptionInput' value="{{description}}"></textarea>
+			<textarea name="description" id="" cols="30" rows="10" class="description" bindinput='descriptionInput' value="{{description}}"></textarea>
 		</view>
 	    <button formType="submit" class="submit_button">点击保存</button>
       <button bindtap='Delete' class="delete_button">删除</button>

@@ -1,7 +1,7 @@
 <view class="container">
 		<view class="head_container">
 			<image class="headpicture" src='{{userInfo.avatarUrl}}'></image>
-			<view><text class="username">{{userInfo.nickName}}</text></view>
+			<view class='name_container'><text class="username">{{userInfo.nickName}}</text></view>
 		</view>
 		<view>
 			<text class="consttext">真实姓名 :</text>

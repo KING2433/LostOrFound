@@ -113,7 +113,7 @@
     <!-- 主页tab -->
     <view class='index-thewholepage'>
       <view class='index-frontview'>
-        <input class='index-input' type="text" placeholder="搜索从这里开始..." value="{{inputVal}}" focus="{{inputShowed}}"bindtap='showview'></input>
+          <button bindtap="showview" class='index-input'>关键词选择</button>
       </view>
     </view>
     <block wx:for="{{Things}}" wx:for-item="item">

@@ -37,46 +37,52 @@ Page({
     });
     that.setData({
       description:''
-    });
-    // that.setData({
-    //   tempFilePaths:'/image/empty.jpg'
-    // });
-    // var tempFilePaths='/image/empty.jpg';
-    // var name = that.data.thing.get("Time") + ".jpg";//上传的图片的别名，建议可以用日期命名    
-    // var file = new Bmob.File(name, tempFilePaths);
-    // file.save().then(function (res) {
-    //   // console.log(res.url());
-    //   that.data.thing.set("Picture", res);
-    //   that.setData({
-    //     tempFilePaths: res.url()
-    //   });
-    //   console.log("tempFile: " + that.data.tempFilePaths);
-    // }, function (error) {
-    //   console.log(error);
-    // })
-    
+    });   
   },
-  // onShow: function () {
-  //   that = this;
-  //   var Things = Bmob.Object.extend("Things");
-  //   var thing = new Things();
-  //   thing.set("WCName", getApp().globalData.userInfo.nickName);
-  //   thing.set("avatarUrl", getApp().globalData.userInfo.avatarUrl);
-  //   thing.set("Place", this.data.place[1]);
-  //   thing.set("Category", this.data.goods_types[1]);
-  //   thing.set("State", false);
-  //   thing.set("username", getApp().globalData.username);
-  //   thing.set("Description", '');
-  //   //LostOrFound true为拾取 false 为丢失
-  //   if (this.data.n_s == 1) {
-  //     thing.set("LostOrFound", true);
-  //   }
-  //   else thing.set("LostOrFound", false);
-  //   that.setData({
-  //     thing: thing
-  //   });
-  // },
-
+  onShow: function () {
+    that = this;
+    var Things = Bmob.Object.extend("Things");
+    var thing = new Things();
+    thing.set("WCName", getApp().globalData.userInfo.nickName);
+    thing.set("avatarUrl", getApp().globalData.userInfo.avatarUrl);
+    thing.set("Place", this.data.place[1]);
+    thing.set("Category", this.data.goods_types[1]);
+    thing.set("State", false);
+    thing.set("username", getApp().globalData.username);
+    thing.set("Description", '');
+    if (this.data.n_s == 1) {
+      thing.set("LostOrFound", true);
+    }
+    else thing.set("LostOrFound", false);
+    that.setData({
+      thing: thing
+    });
+    that.setData({
+      description: ''
+    });
+  },
+  onHide: function () {
+    that = this;
+    var Things = Bmob.Object.extend("Things");
+    var thing = new Things();
+    thing.set("WCName", getApp().globalData.userInfo.nickName);
+    thing.set("avatarUrl", getApp().globalData.userInfo.avatarUrl);
+    thing.set("Place", this.data.place[1]);
+    thing.set("Category", this.data.goods_types[1]);
+    thing.set("State", false);
+    thing.set("username", getApp().globalData.username);
+    thing.set("Description", '');
+    if (this.data.n_s == 1) {
+      thing.set("LostOrFound", true);
+    }
+    else thing.set("LostOrFound", false);
+    that.setData({
+      thing: thing
+    });
+    that.setData({
+      description: ''
+    });
+  },
   chooseState: function (e) {
     var t = parseInt(e.detail.value);
     //console.log('goods发送选择改变，携带值为', e.detail.value)

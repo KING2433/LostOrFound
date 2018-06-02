@@ -1,7 +1,6 @@
 .form_container{
     display: flex;
     flex-direction: column;
-    align-items: left;
     background-color: #ede2ad;
     color: #366a92;
     font-size: 35rpx;
@@ -66,9 +65,9 @@
 }
 
 .submit_button{
-    margin: 50rpx 0 50rpx 38%;
     width: 260rpx;
     height: 100rpx;
+    margin:50rpx auto;
     border: solid; 
     border-width:6rpx;
     border-radius: 15rpx;  

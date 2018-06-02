@@ -152,7 +152,7 @@
 
 .index-input {
   margin-top: 30rpx;
-  width: 75%;
+  width: 93%;
   box-shadow: 0rpx 0rpx 14rpx grey;  
   height: 45rpx;
   border: 2px solid white;
@@ -160,10 +160,9 @@
   outline: none;
   background: white;
   color: #9e9c9c;
-  margin-left: 0rpx;
+
   border-radius: 7rpx;
 }
-
 .index-button {
   position: absolute;
   right: 20rpx;

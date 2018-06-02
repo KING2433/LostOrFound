@@ -2,7 +2,8 @@
 	<form bindsubmit="formSubmit" class="form_container">
 		<view class="left_dis" style="margin-top: 40rpx;">
 			<view bindtap="chooseimage" class="image_container">
-  				<image src="{{tempFilePaths}}" class="upload_image"></image>
+  				<image wx:if='{{tempFilePaths}}' src="{{tempFilePaths}}" class="upload_image"></image>
+          <image wx:if='{{!tempFilePaths}}' src="{{path}}" class="upload_image"></image>
  			</view>
 		</view>
 

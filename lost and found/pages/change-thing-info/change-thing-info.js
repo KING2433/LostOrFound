@@ -12,6 +12,7 @@ Page({
       n_s: 0,
       n_S: 0,
       date:'2018-1-1',
+      path:'/image/empty.jpg'
     },  
   onLoad:function(){
     that=this;

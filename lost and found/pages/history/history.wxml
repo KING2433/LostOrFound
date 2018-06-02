@@ -3,7 +3,9 @@
 
 <block lock wx:for="{{Things}}" wx:for-item="item">
   <view class='p1' bindtap='toChangeInfo' id='{{item.createdAt}}' > 
-  <image class='pic' src='{{item.Picture.url}}'></image>
+  <!-- <image class='pic' src='{{item.Picture.url}}'></image> -->
+  <image class='pic' wx:if='{{item.Picture.url}}' src='{{item.Picture.url}}'></image>
+  <image class='pic' wx:if='{{!item.Picture.url}}' src='{{path}}'></image>
   <view class='box'>
   <text>类别:{{item.Category}}</text>
   <text>{{item.createdAt}}</text>

@@ -20,11 +20,13 @@ Page({
     },
   },
   onLoad() {
+    
     this.setData({
       realName: getApp().globalData.realName,
       Class: getApp().globalData.Class,
       College: getApp().globalData.College,
-      mobilePhoneNumber: getApp().globalData.mobilePhoneNumber  
+      mobilePhoneNumber: getApp().globalData.mobilePhoneNumber,
+      path:'/image/empty.jpg'
     })
     console.log(getApp().globalData.realName);
 

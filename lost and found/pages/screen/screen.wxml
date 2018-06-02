@@ -60,7 +60,7 @@
 
 </view> -->
    <view class='CLblank'></view>
-  <text class='CLdaohang'>时间</text>
+  <text class='CLdaohang'>发布时间</text>
     <view class="CLsearchmax">
       <block wx:for="{{tabs}}">
         <view id="{{index}}" bindtap="tabClick">

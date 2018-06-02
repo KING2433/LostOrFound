@@ -75,7 +75,8 @@
       </view>
 
       <view class='index-vieofmessageimage'>
-        <image src='{{item.Picture.url}}' class='index-messageimage'></image>
+         <image  wx:if="{{item.Picture.url}}" src='{{item.Picture.url}}' class='index-messageimage'></image> 
+        <image wx:if="{{!item.Picture.url}}" src='{{path}}' class='index-messageimage'></image>
       </view>
 
       <view>

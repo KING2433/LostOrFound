@@ -38,6 +38,23 @@ Page({
     that.setData({
       description:''
     });
+    // that.setData({
+    //   tempFilePaths:'/image/empty.jpg'
+    // });
+    // var tempFilePaths='/image/empty.jpg';
+    // var name = that.data.thing.get("Time") + ".jpg";//上传的图片的别名，建议可以用日期命名    
+    // var file = new Bmob.File(name, tempFilePaths);
+    // file.save().then(function (res) {
+    //   // console.log(res.url());
+    //   that.data.thing.set("Picture", res);
+    //   that.setData({
+    //     tempFilePaths: res.url()
+    //   });
+    //   console.log("tempFile: " + that.data.tempFilePaths);
+    // }, function (error) {
+    //   console.log(error);
+    // })
+    
   },
   // onShow: function () {
   //   that = this;
@@ -119,6 +136,7 @@ Page({
       success: function (res) {
          
         var tempFilePaths = res.tempFilePaths;
+        console.log("tempfiles"+tempFilePaths);
         if (tempFilePaths.length > 0) {
           var name = that.data.thing.get("Time") + ".jpg";//上传的图片的别名，建议可以用日期命名    
           var file = new Bmob.File(name, tempFilePaths);

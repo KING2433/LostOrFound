@@ -31,17 +31,25 @@ Page({
    
     //小程序总是会读取data对象来做数据绑定，这个动作我们称为动作A
     // 而这个动作A的执行，是在onLoad函数执行之后发生的
-    myimageone: "/image/two.jpg",
-    wechatname: "用户名（昵称）",
-    nickName: "周周",
-    siderbarname: "小明",
-    siderbarclass: "计科160X",
-    siderbarinstitution: "信息科学与技术学院",
-    siderbarphone: "12345678910",
+  },
+  toDetail: function (event) {
+    var t = event.currentTarget.id;
+    console.log("eventid" + t);
+    console.log("thingid:"+this.data.Things[0].createdAt);
+    for (var i = 0; i < this.data.Things.length; i++) {
+      var x = this.data.Things[i].createdAt.toString();
+      if (x == t) {
+        getApp().data.detail = this.data.Things[i];
+        break;
+      }
+    }
+    getApp().globalData.premission=false;
+    wx.navigateTo({
+      url: '../index-detail/index-detail',
+    })
   },
   // 改变背景颜色
   tabClick: function (tabs) {
-
     var timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
     var n = timestamp * 1000;
@@ -235,8 +243,21 @@ Page({
     })
   },
 
-  //数据存储
-  onSetData: function (data) {
+  toDetail: function (event) {
+    var t = event.currentTarget.id;
+    console.log("eventid" + t);
+    console.log("thingid:" + this.data.Things[0].createdAt);
+    for (var i = 0; i < this.data.Things.length; i++) {
+      var x = this.data.Things[i].createdAt.toString();
+      if (x == t) {
+        getApp().data.detail = this.data.Things[i];
+        break;
+      }
+    }
+    getApp().globalData.premission = false;
+    wx.navigateTo({
+      url: '../index-detail/index-detail',
+    })
   },
   //--------------------------------------------------------------------------------------------------------
   handlerStart(e) {

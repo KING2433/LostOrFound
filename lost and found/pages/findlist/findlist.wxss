@@ -33,7 +33,10 @@ page{
 }
 
 .state{
+  width: 150rpx;
+  height: 60rpx;
   color: red;
-  margin-left: 120rpx;
+  margin-right: 20rpx;
   margin-top: 60rpx;
+  text-align: right;
 }

@@ -1,14 +1,6 @@
 <view>
 	<form bindsubmit="formSubmit" class="form_container">
-		<!-- <view class="goods_types left_dis">
-	    	<radio-group name="lost_or_found">
-	    		<text>物品属性 :</text>
-            <picker value="{{state[n_s]}}" range='{{state}}' bindchange="chooseState">
-		      	<label><radio value="lost" class="typeradio"  bindtap='lost' checked=''/>丢失</label>
-		      	<label><radio value="found" class="typeradio" bindtap='found'/>拾取</label>
-	    	</radio-group>
-  		</view> -->
-		<view class="left_dis">
+		<view class="left_dis" style="margin-top: 20rpx;">
 			<picker bindchange="chooseState" value="{{state[n_s]}}" range="{{state}}" name="state">
     			<view>
       				<text>物品属性 :</text>
@@ -17,16 +9,6 @@
   			</picker>
 		</view>
 		<view class="as_br"></view>
-
-		<!-- <view>
-	    	<text class="time_text left_dis">时间 :</text>
-	    	<!-- <input name="time" style="float: left;" class="time_input" bindinput='timeInput' /> -->
-	    	<!-- <picker mode="date" value="{{date}}" start="2018-01-01" end="2019-01-01" bindchange="chooseTime" class="time_picker">
-			    <view>{{date}}</view>
-	  		</picker>
-	    </view>
-  		
-		<view class="as_br br_clear"></view> --> 
 
 		<view class="left_dis">
 			<picker bindchange="choosePlace" value="{{place[n_p]}}" range="{{place}}" name="place">
@@ -57,7 +39,6 @@
 		
 		<view class="left_dis">
 			<text>上传图片</text>
-      <!-- <image src="{{tempFilePaths}}"></image> -->
 			<view bindtap="chooseimage" class="image_container">
   				<image src="{{tempFilePaths}}" class="upload_image"></image>
  			</view>

@@ -14,7 +14,7 @@
   overflow:hidden;
 }
 .username{
-  margin-left: 100rpx;
+ text-align: center;
 }
 
 .container2{

@@ -1,13 +1,13 @@
 <view>
 	<form bindsubmit="formSubmit" class="form_container">
-		<view class="left_dis">
+		<view class="left_dis" style="margin-top: 40rpx;">
 			<view bindtap="chooseimage" class="image_container">
   				<image src="{{tempFilePaths}}" class="upload_image"></image>
  			</view>
 		</view>
 
     <view class="left_dis">
-		<view>
+		<view style="margin-top: 25rpx;">
 			<text>物品属性 :</text>
 			<text class="choose_result">{{state[n_s]}}</text>
 		</view>

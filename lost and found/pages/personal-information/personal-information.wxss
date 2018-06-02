@@ -1,14 +1,12 @@
 .container{
 	width: 100%;
-	
 	display: flex;
-    flex-direction: column;
-    align-items: left;
-    background-color: #ede2ad;
-    color: #366a92;
-    font-size: 35rpx;
-    font-weight: bold;
-    margin-top: -250rpx;
+  flex-direction: column;
+  background-color: #ede2ad;
+  color: #366a92;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-top: -250rpx;
 }
 
 .head_container{
@@ -19,14 +17,20 @@
 .headpicture{
 	height: 300rpx;
 	width: 300rpx;
-	margin-left: 225rpx;
+	margin: 0 auto;
 	border-radius:50%; 
 	overflow:hidden;
 }
 
 .username{
-	font-size: 30rpx;
-	margin-left: 320rpx;
+	font-size: 40rpx;
+}
+
+.name_container{
+  text-align: center;
+  width: 300rpx;
+  height: 70rpx;
+  margin: 10rpx auto 0 auto;
 }
 
 .consttext{
@@ -42,7 +46,7 @@
 }
 
 .button{
-    margin: 80rpx 0 50rpx 34%;
+    margin: 80rpx auto 50rpx auto;
     width: 260rpx;
     height: 100rpx;
     border: solid; 

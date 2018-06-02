@@ -13,7 +13,7 @@ Page({
   data: {
     windowWidth: wx.getSystemInfoSync().windowWidth,
     pageBackgroundColor: '#5cb85c',
-    tabs: ["今天内", "近三天内", "近一周内", "近一个月内", "近半年内","所有"],
+    tabs: ["一天内", "近三天内", "近一周内", "近一个月内", "近半年内","所有"],
     tabs1: ["教室", "操场", "食堂", "教学楼", "图书馆", "体育馆", "实验楼", "南门", "东门", "其它"],
     tabs2: ["文具", "眼镜", "书籍", "衣服", "鞋子", "校园卡", "数码用品", "生活用品", "其它"],
     clickId: 0,
@@ -50,13 +50,6 @@ Page({
   },
   // 改变背景颜色
   tabClick: function (tabs) {
-    var timestamp = Date.parse(new Date());
-    timestamp = timestamp / 1000;
-    var n = timestamp * 1000;
-    var date = new Date(n);
-    var Y = date.getFullYear();
-    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
-    var D = date.getDate()  < 10 ? '0' + date.getDate() : date.getDate();
     console.log(tabs);
     this.setData({
       clickId: tabs.currentTarget.id,
@@ -66,24 +59,124 @@ Page({
     var _this = this;
     var Things = Bmob.Object.extend("Things");
     var query = new Bmob.Query(Things);
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    var Y = date.getFullYear();
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    var time = Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s;
     if(this.data.clickId==0)
     {
-      var time = Y + "-" + M + "-" + D + " 00:00:00";
-      console.log(time);
-      query.equalTo("Time", time);
+      var newtimestamp=timestamp-24*60*60;
+      var newn=newtimestamp*1000;
+      var newdate =new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if(newh<10)
+      newh='0'+newh;
+      var newm = newdate.getMinutes();
+      if(newm<10)
+      newm='0'+newm;
+      var news = newdate.getSeconds();
+      if(news<10)
+      news='0'+news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm +":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
     }
     else if (this.data.clickId == 1)
     {
-      var newday_timetamp=timestamp - 2 * 24 * 60 * 60;
-      var n_to = newday_timetamp * 1000;
-      var newday_date = new Date(n_to);
-      var Y_newday = newday_date.getFullYear();
-      var M_newday = (newday_date.getMonth() + 1 < 10 ? '0' + (newday_date.getMonth() + 1) : newday_date.getMonth() + 1);
-      var D_newday = newday_date.getDate() < 10 ? '0' + newday_date.getDate() : newday_date.getDate();
-      var time = Y_newday + "-" + M_newday + "-" + D_newday + " 00:00:00";
-      console.log(time);
-      query.equalTo("Time", { "$gte": { "__type": "Date", "iso": time } });
+      var newtimestamp = timestamp - 3*24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
     }
+    else if(this.data.clickId == 2)
+    {
+      var newtimestamp = timestamp - 7*24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if(this.data.clickId == 3)
+    {
+      var newtimestamp = timestamp - 30*24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if(this.data.clickId == 4)
+    {
+      var newtimestamp = timestamp - 180*24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    query.equalTo("Place", this.data.clickItemtwo);
+    query.equalTo("Category", this.data.clickItemthree);
     query.descending("createdAt");
     // 查询所有数据
     query.find({
@@ -113,7 +206,119 @@ Page({
     var _this = this;
     var Things = Bmob.Object.extend("Things");
     var query = new Bmob.Query(Things);
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    var Y = date.getFullYear();
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    var time = Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s;
+    if (this.data.clickId == 0) {
+      var newtimestamp = timestamp - 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 1) {
+      var newtimestamp = timestamp - 3 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 2) {
+      var newtimestamp = timestamp - 7 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 3) {
+      var newtimestamp = timestamp - 30 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 4) {
+      var newtimestamp = timestamp - 180 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
     query.equalTo("Place", this.data.clickItemtwo);
+    query.equalTo("Category", this.data.clickItemthree);
     query.descending("createdAt");
     // 查询所有数据
     query.find({
@@ -143,8 +348,119 @@ Page({
     var _this = this;
     var Things = Bmob.Object.extend("Things");
     var query = new Bmob.Query(Things);
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    var Y = date.getFullYear();
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    var time = Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s;
+    if (this.data.clickId == 0) {
+      var newtimestamp = timestamp - 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 1) {
+      var newtimestamp = timestamp - 3 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 2) {
+      var newtimestamp = timestamp - 7 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 3) {
+      var newtimestamp = timestamp - 30 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
+    else if (this.data.clickId == 4) {
+      var newtimestamp = timestamp - 180 * 24 * 60 * 60;
+      var newn = newtimestamp * 1000;
+      var newdate = new Date(newn);
+      var newY = newdate.getFullYear();
+      var newM = (newdate.getMonth() + 1 < 10 ? '0' + (newdate.getMonth() + 1) : newdate.getMonth() + 1);
+      var newD = newdate.getDate() < 10 ? '0' + newdate.getDate() : newdate.getDate();
+      var newh = newdate.getHours();
+      if (newh < 10)
+        newh = '0' + newh;
+      var newm = newdate.getMinutes();
+      if (newm < 10)
+        newm = '0' + newm;
+      var news = newdate.getSeconds();
+      if (news < 10)
+        news = '0' + news;
+      var newtime = newY + "-" + newM + "-" + newD + " " + h + ":" + newm + ":" + news;
+      console.log(newtime);
+      query.equalTo("createdAt", { "$gte": { "__type": "Date", "iso": newtime } });
+    }
     query.equalTo("Place", this.data.clickItemtwo);
-    query.equalTo("Category", this.data.clickItemthree);
+    query.equalTo("Category",this.data.clickItemthree);
     query.descending("createdAt");
     // 查询所有数据
     query.find({

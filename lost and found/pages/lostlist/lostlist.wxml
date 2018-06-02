@@ -1,0 +1,55 @@
+<!--pages/lostlist/lostlist.wxml-->
+<view class='container2'>
+<!--
+  变量声明：
+  物品索引：findListthingsIndex
+  时间：findListTimeTable
+  地点：findListPosition
+  图片路径：find
+ -->
+
+ <block lock wx:for="{{Things}}" wx:for-item="item">
+  <view class='p1' bindtap='toChangeInfo' id='{{item.createdAt}}' > 
+  <image class='pic' src='{{item.Picture.url}}'></image>
+  <view class='box'>
+  <text>类别:{{item.Category}}</text>
+  <text>{{item.createdAt}}</text>
+  <text>{{item.Place}}</text>
+  </view>
+  <text class='state'>未归还</text>
+  </view>
+</block>
+
+
+<!-- <view class='p1' bindtap='onTap1' > 
+<image class='pic' src='/image/tou6.jpg'></image>
+<view class='box'>
+<text>类别:其他</text>
+<text>2018-02-29</text>
+<text>操场</text>
+</view>
+<text class='state'>未找到</text>
+</view>
+
+<view class='p1' bindtap='onTap2'>
+<image class='pic' src='/image/tou5.jpg'></image>
+<view class='box'>
+<text>类别:眼镜</text>
+<text>2018-02-23</text>
+<text>其他</text>
+</view>
+<text class='state'>未找到</text>
+</view>
+
+<view class='p1'bindtap='onTap4'>
+<image class='pic' src='/image/tou4.jpg'></image>
+<view class='box'>
+<text>类别:书</text>
+<text>2018-01-01</text>
+<text>操场</text>
+</view>
+<text class='state'>未找到</text>
+</view> -->
+</view>
+
+

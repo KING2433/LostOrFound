@@ -1,0 +1,77 @@
+<!--pages/history/history.wxml-->
+<view class='container2'>
+
+<block lock wx:for="{{Things}}" wx:for-item="item">
+  <view class='p1' bindtap='toChangeInfo' id='{{item.createdAt}}' > 
+  <image class='pic' src='{{item.Picture.url}}'></image>
+  <view class='box'>
+  <text>类别:{{item.Category}}</text>
+  <text>{{item.createdAt}}</text>
+  <text>{{item.Place}}</text>
+  </view>
+  <!-- <text class='state'>未归还</text> -->
+  <text  class='state' wx:if="{{item.LostOrFound}}">已归还</text>
+  <text  class='state' wx:if="{{!item.LostOrFound}}">已找到</text>
+  </view>
+</block>
+<!-- <view class='p1' bindtap='onTap1' > 
+<image class='pic' src='/image/his2.jpg'></image>
+<view class='box'>
+<text>类别:文具</text>
+<text>2018-04-08</text>
+<text>其他</text>
+</view>
+<text class='state'>已找到</text>
+</view>
+
+<view class='p1' bindtap='onTap2'>
+<image class='pic' src='/image/his1.jpg'></image>
+<view class='box'>
+<text>类别:箱包</text>
+<text>2018-04-01</text>
+<text>操场</text>
+</view>
+<text class='state'>已归还</text>
+</view>
+
+<view class='p1' bindtap='onTap3'>
+<image class='pic' src='/image/his3.jpg'></image>
+<view class='box'>
+<text>类别:其他</text>
+<text>2018-03-12</text>
+<text>食堂</text>
+</view>
+<text class='state'>已归还</text>
+</view>
+
+<view class='p1'bindtap='onTap4'>
+<image class='pic' src='/image/his4.jpg'></image>
+<view class='box'>
+<text>类别:其他</text>
+<text>2018-02-14</text>
+<text>图书馆</text>
+</view>
+<text class='state'>已找到</text>
+</view>
+
+<view class='p1'bindtap='onTap4'>
+<image class='pic' src='/image/his5.jpg'></image>
+<view class='box'>
+<text>类别:数码</text>
+<text>2018-01-15</text>
+<text>主教</text>
+</view>
+<text class='state'>已找到</text>
+</view> -->
+
+<!-- <view class='p1'bindtap='onTap4'>
+<image class='pic' src='/image/his1 (6).jpg'></image>
+<view class='box'>
+<text>类别:箱包</text>
+<text>2018-01-09</text>
+<text>图书馆</text>
+</view>
+<text class='state'>已找到</text>
+</view> -->
+</view>
+

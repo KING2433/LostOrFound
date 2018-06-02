@@ -1,0 +1,11 @@
+<view class="welcome-container">
+	<view class="welcome-icon">
+		<image src="/image/background.png" class="welcome-icon-image"></image>
+	</view>
+	<text class="welcome-content">北京化工大学失物招领平台</text>
+	<view> 
+		<button class="welcome-button" bindtap="jumpToIndex">登录</button>
+		<!-- <image class="welcome-button" src="../image/welcome-image/button.png" bindtap="jumpToIndex"></image> -->
+	</view>
+	<text class="welcome-team">北京化工大学XXX团队出品</text>
+</view>

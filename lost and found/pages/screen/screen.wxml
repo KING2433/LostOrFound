@@ -1,0 +1,148 @@
+<!--pages/test/test.wxml-->
+<view class="page" bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab">
+    <!-- <view class='CLblank'></view>
+    <text class='CLsearchmax'>时间</text>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>一天内</view>
+      <view class='CLchoose_user_item'>三天内</view>
+      <view class='CLchoose_user_item'>一周内</view>
+    </view>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>一个月内</view>
+      <view class='CLchoose_user_item'>所有</view>
+      <view class='CLchoose_user_item'>其他</view>
+    </view>
+   <view class="as_br"></view>
+   <text class='CLsearchmax'>地点</text>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>教室</view>
+      <view class='CLchoose_user_item'>操场</view>
+      <view class='CLchoose_user_item'>食堂</view>
+    </view>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>教学楼</view>
+      <view class='CLchoose_user_item'>图书馆</view>
+      <view class='CLchoose_user_item'>体育馆</view>
+    </view>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>实验楼</view>
+      <view class='CLchoose_user_item'>东门</view>
+      <view class='CLchoose_user_item'>南门</view>
+    </view>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>其他</view>
+      </view>
+   <view class="as_br"></view>
+   
+    <text class='CLsearchmax'>物品类型</text>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item' style="background-color:{{pageBackgroundColor}}" bindtap="changeColor" hover-class='none'>校园卡</view>
+      <view class='CLchoose_user_item'>文具</view>
+      <view class='CLchoose_user_item'>眼镜</view>
+    </view>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>书籍</view>
+      <view class='CLchoose_user_item'>衣服</view>
+      <view class='CLchoose_user_item'>鞋子</view>
+    </view>
+     <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>银行卡</view>
+      <view class='CLchoose_user_item'>数码产品</view>
+      <view class='CLchoose_user_item'>生活用品</view>
+    </view>
+    <view class='CLchoose_user'>
+      <view class='CLchoose_user_item'>其他</view>
+    </view> -->
+    <!-- <view class="CLchoose_user_item" style="background-color:{{pageBackgroundColor}}" bindtap="changeColor" hover-class='none'>
+ <button bindtap="changeColor" hover-class="none">点击修改背景颜色</button> 
+
+</view> -->
+   <view class='CLblank'></view>
+  <text class='CLdaohang'>时间</text>
+    <view class="CLsearchmax">
+      <block wx:for="{{tabs}}">
+        <view id="{{index}}" bindtap="tabClick">
+          <block wx:if="{{index==clickId}}">
+            <view class="CLchoose_user_item" style="background:red">{{item}}</view>
+          </block>
+          <block wx:else>
+            <view class="CLchoose_user_item">{{item}}</view>
+          </block>
+        </view>
+      </block>
+    </view>
+    <view class="as_br"></view>
+ <view class='CLblankone'></view>
+    <view class='CLdaohang'>地点</view>
+    
+    <view class="CLsearchmax">
+      <block wx:for="{{tabs1}}">
+        <view id="{{index}}" bindtap="tabClick1">
+          <block wx:if="{{index==clickIdtwo}}">
+            <view class="CLchoose_user_item" style="background:red">{{item}}</view>
+          </block>
+          <block wx:else>
+            <view class="CLchoose_user_item">{{item}}</view>
+          </block>
+        </view>
+      </block>
+    </view>
+     <view class="as_br"></view>
+     <view class='CLblankone'></view>
+    <view class='CLdaohang'>物品类型</view>
+    
+    <view class="CLsearchmax">
+      <block wx:for="{{tabs2}}">
+        <view id="{{index}}" bindtap="tabClick2">
+          <block wx:if="{{index==clickIdthree}}">
+            <view class="CLchoose_user_item" style="background:red">{{item}}</view>
+          </block>
+          <block wx:else>
+            <view class="CLchoose_user_item">{{item}}</view>
+          </block>
+        </view>
+      </block>
+    </view>
+
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+  <!-- 主页 -->
+  <view class="home" style="{{translate}}">
+    <!-- 主页tab -->
+    <view class='index-thewholepage'>
+      <view class='index-frontview'>
+        <input class='index-input' type="text" placeholder="搜索从这里开始..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"></input>
+        <input type="submit" value="点击" bindtap='showview' class='CLsearch_button'> </input>
+        
+      </view>
+    </view>
+    <block wx:for="{{Things}}" wx:for-item="item">
+      <view class='index-card' bindtap='goToDetail'>
+        <view class='index-searchview'>
+          <image class='index-massage-user-image' src='{{item.avatarUrl}}'> </image>
+          <text class='index-massage-text'>{{item.WCName}}</text>
+        </view>
+
+        <view class='index-vieofmessageimage'>
+          <image src='{{item.Picture.url}}' class='index-messageimage'></image>
+        </view>
+
+        <view>
+          <text class='index-massage-texttwo'>时间: {{item.createdAt}}</text>
+        </view>
+        <view class='descriptionview'>
+          <text class='index-massage-textthree'>描述：{{item.Description}}</text>
+        </view>
+
+      </view>
+    </block>
+    <view class="d1">
+      <form>
+        <!-- <input class="d1-input" type="text" placeholder="搜索从这里开始..."></input> -->
+        <button class="d1-button" type="submit"></button>
+      </form>
+    </view>
+  </view>
+</view>

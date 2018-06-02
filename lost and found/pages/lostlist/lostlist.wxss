@@ -1,0 +1,43 @@
+/* pages/lostlist/lostlist.wxss */
+page{
+    height: 100%;
+    background-color: #ede2ad;
+}
+.container2{
+    padding: 0;
+}
+
+.p1{
+  background-color: #f8f3dd;
+  height: 200rpx;
+  margin-top: 10rpx;
+  padding-top: 20rpx;
+  padding-left: 48rpx;
+  color: #366a92;
+  font-weight: 600;
+  display: flex;
+  flex-direction: line;
+}
+
+.pic{
+  height: 180rpx;
+  width: 180rpx;
+}
+
+.box{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    width: 300rpx;
+}
+
+.state{
+  width: 150rpx;
+  height: 60rpx;
+  color: red;
+  margin-right: 20rpx;
+  margin-top: 60rpx;
+  text-align: right;
+}

@@ -1,0 +1,97 @@
+<!--pages/test/test.wxml-->
+<view class="page" bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab">
+    <block wx:if="{{user_name ===''}}">
+    </block>
+    <block wx:else>
+      <view class='siderbar-image-view'>
+        <image class='siderbar-image' src='{{userInfo.avatarUrl}}'> </image>
+        <text class='index-massage-text'>{{userInfo.nickName}}</text>
+      </view>
+
+    </block>
+    <view class="page_tab_content">
+      <navigator url='../order/order'>
+        <view class="wc">
+          <image src='/pages/image/sidebar-image/siderbar1.gif'></image>
+          <text>姓名 :  {{realName}}</text>
+        </view>
+      </navigator>
+      <view class="wc">
+        <image src='/pages/image/sidebar-image/siderbar3.gif'></image>
+        <text bindtap='tosat'>班级 ：  {{Class}}</text>
+      </view>
+      <view class="wc">
+        <view style='position:absolute;opacity: 0;   top: 10px; '>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+          <contact-button size="27" class='pos'></contact-button>
+        </view>
+        <image src='/pages/image/sidebar-image/siderbar5.gif'></image>
+        <text>学院 ：{{College}}</text>
+      </view>
+      <view class="wc">
+        <image src='/pages/image/sidebar-image/siderbar7.gif'></image>
+        <text>联系方式 ： {{mobilePhoneNumber}}</text>
+      </view>
+      <button bindtap="change_info">修改信息</button>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+  <!-- 主页 -->
+  <view class="home" style="{{translate}}">
+    <!-- 主页tab -->
+    <view class='index-thewholepage'>
+      <view class='index-frontview'>
+        <image class="index-user-image" src="{{userInfo.avatarUrl}}" bindtap='showview'></image>
+
+         <input class='index-input' type="text" placeholder="搜索从这里开始..." value="{{inputVal}}" focus="{{inputShowed}}" bindtap="click_search"></input> 
+        <!-- <view class="search-wrapper {{show_search_back?'search-wrapper-blue':''}}">
+          <view class="search-button" bindtap="click_search">
+            <view class="iconfont icon-sousuo"></view>
+            搜索活动
+          </view>
+        </view>
+      </view> -->
+  </view>
+  </view>
+  <block wx:for="{{Things}}" wx:for-item="item">
+    <view class='index-card' bindtap='toDetail' id="{{item.createdAt}}">
+      <view class='index-searchview'>
+        <!-- <text>{{item.createdAt}}</text> -->
+        <image class='index-massage-user-image' src='{{item.avatarUrl}}'> </image>
+        <text class='index-massage-text'>{{item.WCName}}</text>
+      </view>
+
+      <view class='index-vieofmessageimage'>
+        <image src='{{item.Picture.url}}' class='index-messageimage'></image>
+      </view>
+
+      <view>
+        <text class='index-massage-texttwo'>时间: {{item.createdAt}}</text>
+      </view>
+      <view class='descriptionview'>
+        <text class='index-massage-textthree'>描述：{{item.Description}}</text>
+      </view>
+
+    </view>
+  </block>
+  <view class="d1">
+    <form>
+      <!-- <input class="d1-input" type="text" placeholder="搜索从这里开始..."></input> -->
+      <button class="d1-button" type="submit"></button>
+    </form>
+  </view>
+</view>
+</view>

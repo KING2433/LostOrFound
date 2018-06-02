@@ -1,0 +1,84 @@
+.container{
+	padding: 0;
+	display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #ede2ad;
+}
+
+.image-container{
+	padding-top: 40rpx;
+	width: 80%;
+	height: 330rpx;
+	margin: 0 auto;
+}
+
+.head-image{
+	width: 100%;
+	height: 330rpx;
+}
+
+.as_br{
+	clear: both;
+    width: 670rpx;
+    height: 2px;
+    margin-top: 12rpx;
+    margin-bottom: 30rpx;
+    background-color: white;
+}
+
+.index-container{
+	width: 90%;
+	margin: 30rpx auto;
+	color: #366a92;
+    font-weight: bold;
+    font-size: 35rpx;
+}
+
+.detail-description{
+	width: 96%;
+	height: 220rpx;
+	background-color: white;
+	margin-top: 40rpx;
+	padding: 15rpx;
+	color: brown;
+	font-size: 30rpx;
+}
+
+.whetherlost{
+	margin-left: 50rpx;
+}
+
+.whetherfound{
+	margin-left: 260rpx;
+	color: red;
+}
+.whetherlost1{
+	margin-left: 50rpx;
+  color: red;
+}
+
+.whetherfound1{
+	margin-left: 260rpx;
+	
+}
+
+button{
+	width: 210rpx;
+	height: 90rpx;
+	background-color: #ede2ad;
+	color: #366a92;
+	font-size: 35rpx;
+	margin-top: 140rpx;
+	margin-bottom: 150rpx;
+	border: 1px solid #366a92;
+	border-radius: 8px;
+}
+
+.button1{
+	float: left;
+}
+
+.button2{
+	float: right;
+}

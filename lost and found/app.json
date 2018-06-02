@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/screen/screen",
+    "pages/test/test",
+    "pages/index-detail/index-detail",
+    "pages/my/my",
+    "pages/change-information/change-information",
+    "pages/findlist/findlist",
+    "pages/description/description",
+    "pages/post-item/post-item",
+    "pages/history/history",
+    "pages/lostlist/lostlist",
+    "pages/personal-information/personal-information",
+    "pages/change-thing-info/change-thing-info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#366a92",
+    "navigationBarTitleText": "失物招领",
+    "navigationBarTextStyle": "SimSun"
+  },
+  "tabBar": {
+    "color": "#366a92",
+    "selectedColor": "white",
+    "selectedbackground": "#366a92",
+    "borderStyle": "white",
+    "selectedbackgroundColor": "#366a92",
+    "position": "bottom",
+    "backgroundColor": "#366a92",
+    "list": [
+      {
+        "selectedIconPath": "pages/image/index-image/home onclick.png",
+        "iconPath": "pages/image/index-image/change2.png",
+        "pagePath": "pages/test/test",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "pages/image/index-image/release onclick.png",
+        "iconPath": "pages/image/index-image/change1.png",
+        "pagePath": "pages/description/description",
+        "text": "发布"
+      },
+      {
+        "selectedIconPath": "pages/image/index-image/my1.png",
+        "iconPath": "pages/image/index-image/change3.png",
+        "pagePath": "pages/my/my",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

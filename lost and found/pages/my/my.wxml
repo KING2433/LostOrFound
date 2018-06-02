@@ -1,0 +1,29 @@
+<!--pages/my/my.wxml-->
+<view class='container1'>
+<image class='pic' src='{{userInfo.avatarUrl}}'></image>
+<view>
+<text class='username'>{{userInfo.nickName}}</text>
+</view>
+</view>
+
+<view class='container2'>
+<view class='p1'style='margin-top:0;' bindtap='onTap1' > 
+<text> 个人信息 </text>
+<image class='icon1' src='/image/more.png'></image>
+</view>
+
+<view class='p1' bindtap='onTap2'>
+<text>丢失物品列表</text>
+<image class='icon2' src='/image/more.png'></image>
+</view>
+
+<view class='p1' bindtap='onTap3'>
+<text>拾取物品列表</text>
+<image class='icon2' src='/image/more.png'></image>
+</view>
+
+<view class='p1'bindtap='onTap4'>
+<text>历史消息</text>
+<image class='icon1' src='/image/more.png'></image>
+</view>
+</view>

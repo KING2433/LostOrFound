@@ -1,0 +1,57 @@
+<view class="container">
+	<view class="image-container">
+		<image src="{{Inf.Picture.url}}" class="head-image"></image>
+	</view>
+	<view class="index-container">
+		<view>
+			<text>物品属性:</text>
+      <view  wx:if="{{Inf.LostOrFound}}">
+      <text class="whetherlost">丢失</text>
+			<text class="whetherfound">拾取</text>
+      </view>
+			<view  wx:if="{{!Inf.LostOrFound}}">
+      <text class="whetherlost1">丢失</text>
+			<text class="whetherfound1">拾取</text>
+      </view>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text>姓名:</text>
+			<text>{{realName}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text>班级:</text>
+			<text>{{Class}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text>联系方式:</text>
+			<text>{{mobilePhoneNumber}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text>时间:</text>
+			<text>{{Inf.createdAt}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text>地点:</text>
+			<text>{{Inf.Place}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text>物品类别:</text>
+			<text>{{Inf.Category}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text>物品描述:</text>
+			<view class="detail-description">
+				<text>{{Inf.Description}}</text>
+			</view>
+		</view>
+		<!-- <button class="button1">修改状态</button>
+		<button class="button2">编辑信息</button> -->
+	</view>
+</view>

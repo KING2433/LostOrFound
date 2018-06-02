@@ -1,0 +1,16 @@
+<!--pages/findlist/findlist.wxml-->
+<view class='container2'>
+
+<block lock wx:for="{{Things}}" wx:for-item="item">
+  <view class='p1' bindtap='toChangeInfo' id='{{item.createdAt}}' > 
+  <image class='pic' src='{{item.Picture.url}}'></image>
+  <view class='box'>
+  <text>类别:{{item.Category}}</text>
+  <text>{{item.createdAt}}</text>
+  <text>{{item.Place}}</text>
+  </view>
+  <text class='state'>未归还</text>
+  </view>
+</block>
+</view> 
+

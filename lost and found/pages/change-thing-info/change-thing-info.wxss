@@ -1,0 +1,98 @@
+.form_container{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #ede2ad;
+    color: #366a92;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.left_dis{
+    margin-left: 7%;
+}
+
+.as_br{
+    width: 670rpx;
+    height: 2px;
+    margin: 12rpx 0 25rpx 6%;
+    background-color: white;
+    box-shadow: grey 0rpx 3rpx 20rpx 1rpx;
+}
+
+.br_clear{
+    clear: left;
+    margin-top: 85rpx;
+}
+
+.goods_types{
+    margin-top: 10px;
+}
+
+.typeradio{
+    margin-left: 6%;
+    transform:scale(.8);
+}
+
+.time_text{
+    float: left;
+}
+
+.time_picker{
+    float: left;
+    width: 400rpx;
+}
+
+.choose_result{
+    margin-left: 10rpx;
+}
+
+.description{
+    background-color: white;
+    width: 660rpx;
+    height: 300rpx;
+    margin-top: 8px;
+    margin-bottom: 20rpx;
+    font-size: 28rpx;
+    color: black;
+    font-weight: normal;
+}
+
+.image_container{
+    margin-top: 10rpx;
+    background-color: white;
+    width: 660rpx;
+    height: 400rpx;
+}
+
+.submit_button{
+    margin: 50rpx 0 50rpx 10%; 
+    width: 260rpx;
+    height: 100rpx;
+    border: solid; 
+    border-width:6rpx;
+    border-radius: 15rpx;  
+    font-size: 45rpx;
+    line-height: 90rpx;
+    border-color: #366a92; 
+    background-color: #ede2ad; 
+    color: #366a92;
+}
+.delete_button{
+    margin: 50rpx 0 50rpx 10%;
+    width: 260rpx;
+    height: 100rpx;
+    border: solid; 
+    border-width:6rpx;
+    border-radius: 15rpx;  
+    font-size: 45rpx;
+    line-height: 90rpx;
+    border-color: #366a92; 
+    background-color: #ede2ad; 
+    color: #366a92;
+}
+.upload_image{
+    width: 95%;
+    height: 90%;
+    margin: 20rpx 20rpx 20rpx 20rpx;
+}

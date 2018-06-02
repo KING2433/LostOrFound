@@ -1,0 +1,29 @@
+<view>
+	<form bindsubmit="formSubmit" class="form_container">
+		<view class="head_container">
+			<image class="headpicture" src='{{userInfo.avatarUrl}}'></image>
+			<!-- <view><text class="username">周周</text></view> -->
+		</view>
+		<view>
+			<text class="consttext">真实姓名 :</text>
+			<input class="input" bindinput="getrealName" value='{{realName}}'/>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text class="consttext">班级 :</text>
+			<input class="input" bindinput='getClass' value='{{Class}}'/>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text class="consttext">学院 :</text>
+			<input class="input" bindinput='getCollege' value='{{College}}'/>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text class="consttext">联系方式 :</text>
+			<input class="input" bindinput='getmobilePhoneNumber' value='{{mobilePhoneNumber}}'/>
+			<view class="as_br"></view>
+		</view>
+		<button formType="submit" class="submit_button">确认修改</button>
+	</form>
+</view>

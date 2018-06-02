@@ -1,0 +1,27 @@
+<view class="container">
+		<view class="head_container">
+			<image class="headpicture" src='{{userInfo.avatarUrl}}'></image>
+			<view><text class="username">{{userInfo.nickName}}</text></view>
+		</view>
+		<view>
+			<text class="consttext">真实姓名 :</text>
+			<text>{{realName}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text class="consttext">班级 :</text>
+			<text>{{Class}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text class="consttext">学院 :</text>
+			<text>{{College}}</text>
+			<view class="as_br"></view>
+		</view>
+		<view>
+			<text class="consttext">联系方式 :</text>
+			<text>{{mobilePhoneNumber}}</text>
+			<view class="as_br"></view>
+		</view>
+		<button class="button" bindtap="change_info">修改信息</button>
+</view> 

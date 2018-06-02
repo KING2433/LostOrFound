@@ -1,0 +1,56 @@
+.container{
+	width: 100%;
+	
+	display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #ede2ad;
+    color: #366a92;
+    font-size: 35rpx;
+    font-weight: bold;
+    margin-top: -250rpx;
+}
+
+.head_container{
+	margin-top: 90rpx;
+	margin-bottom: 150rpx;
+}
+
+.headpicture{
+	height: 300rpx;
+	width: 300rpx;
+	margin-left: 225rpx;
+	border-radius:50%; 
+	overflow:hidden;
+}
+
+.username{
+	font-size: 30rpx;
+	margin-left: 320rpx;
+}
+
+.consttext{
+	margin-left: 40rpx;
+	margin-right: 20rpx;
+}
+
+.as_br{
+    width: 680rpx;
+    height: 2px;
+    margin: 12rpx 0 50rpx 6%;
+    background-color: white;
+}
+
+.button{
+    margin: 80rpx 0 50rpx 34%;
+    width: 260rpx;
+    height: 100rpx;
+    border: solid; 
+    border-width:6rpx;
+    border-radius: 15rpx;  
+    font-size: 45rpx;
+    line-height: 90rpx;
+    border-color: #366a92; 
+    background-color: #ede2ad; 
+    color: #366a92;
+}

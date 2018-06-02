@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/welcome/welcome",
+    "pages/Info/Info",
     "pages/screen/screen",
     "pages/test/test",
     "pages/index-detail/index-detail",

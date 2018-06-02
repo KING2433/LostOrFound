@@ -256,35 +256,6 @@ Page({
       translate: '',
     })
   },
-  // //搜索
-  // inputTyping: function (e) {
-  //   //搜索数据
-  //   that = this;
-  //   var _this = this;
-  //   var Things = Bmob.Object.extend("Things");
-  //   var query = new Bmob.Query(Things);
-  //   query.equalTo("Category", e.detail.value);
-  //   // 查询所有数据
-  //   query.find({
-  //     success: function (results) {
-  //       _this.setData({
-  //         Things: results
-  //       });
-  //       console.log("共查询到 " + results.length + " 条记录");
-  //       // 循环处理查询到的数据
-  //       //  for (var i = 0; i < results.length; i++) {
-  //       //    var object = results[i];
-  //       //    console.log(object.id + ' - ' + object.get('Category'));
-  //       //  }
-  //     },
-  //     error: function (error) {
-  //       console.log("查询失败: " + error.code + " " + error.message);
-  //     }
-  //   });
-  //   this.setData({
-  //     inputVal: e.detail.value
-  //   });
-  // },
   
   change_info: function () {
     wx.navigateTo({
@@ -300,20 +271,10 @@ Page({
       });
     }
   },
-  goToDetail: function () {
-    wx.navigateTo({
-      url: '/pages/index-detail/index-detail'
-    });
-  },
   closeAddLayer: function () {
     that.setData({
       modifyDiarys: false
     })
-  },
-  goToDetail:function(){
-    wx.navigateTo({
-        url: '/pages/index-detail/index-detail'
-    });
   },
   click_search:function(){
     wx.navigateTo({

@@ -540,25 +540,6 @@ Page({
   },
 
 
-  onShow: function (e) {
-    var Things = Bmob.Object.extend("Things");
-    var thing = new Bmob.Query(Things);
-    that = this;
-    thing.find({
-      success: function (results) {
-        console.log("success");
-        console.log("we find " + results.length);
-        that.setData({
-          Things: results
-        });
-        console.log(results);
-        // that.data.Things=results;
-      },
-      error: function (error) {
-        console.log("failed");
-      }
-    })
-  },
 
   toDetail: function (event) {
     var t = event.currentTarget.id;

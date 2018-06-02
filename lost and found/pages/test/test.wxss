@@ -18,11 +18,11 @@
   margin-left: 20rpx;  
   margin-top: 20rpx;  
   border-radius:118rpx;
-   position: absolute;  
- box-shadow: 0rpx 0rpx 14rpx grey;  
+  position: absolute;  
+  box-shadow: 0rpx 0rpx 14rpx grey;  
 }  
 .siderbar-image{
-   display: inline-block;
+  display: inline-block;
   width: 130rpx;
   height: 130rpx;
   border-radius: 128rpx;
@@ -45,7 +45,7 @@
   transition:width 2s;  
   filter: alpha(opacity=70);    
 }   
- /* 侧滑栏 */  
+/* 侧滑栏 */  
 .page_tab {  
   height: 100%;  
   width: 750rpx;  
@@ -53,7 +53,7 @@
   background-color:#ede2ad;  
   z-index: 0; 
 }  
-  
+
 .page_tab_content .wc {  
   color: #366a92;  
   position: relative;  
@@ -62,7 +62,7 @@
   padding: 20rpx 0 30rpx 20rpx;  
   margin-top: 30rpx;
 }  
-  
+
 .page_tab_content button {  
   width: 280rpx;  
   background: #fb9817;  
@@ -73,14 +73,14 @@
   height: 60rpx;  
   line-height: 60rpx;  
 }  
-  
+
 .page_tab_content image {  
   display: inline-block;  
   height: 40rpx;  
   width: 40rpx;  
   margin-right: 30rpx;  
 }  
-  
+
 .user_head {  
   width: 120rpx;  
   height: 120rpx;  
@@ -152,7 +152,6 @@
   width: 460rpx;
   box-shadow: 0rpx 0rpx 10rpx grey;  
   height: 65rpx;
-  /* //padding-left: 40rpx; */
   border: 1px solid #f9f0da;
   border-radius: 20rpx; 
   outline: none;
@@ -279,15 +278,22 @@
 }
 
 .button{
-    margin: 80rpx 0 50rpx 34%;
-    width: 260rpx;
-    height: 100rpx;
-    border: solid; 
-    border-width:6rpx;
-    border-radius: 15rpx;  
-    font-size: 45rpx;
-    line-height: 90rpx;
-    border-color: #366a92; 
-    background-color: #ede2ad; 
-    color: #366a92;
+  margin: 80rpx 0 50rpx 34%;
+  width: 260rpx;
+  height: 100rpx;
+  border: solid; 
+  border-width:6rpx;
+  border-radius: 15rpx;  
+  font-size: 45rpx;
+  line-height: 90rpx;
+  border-color: #366a92; 
+  background-color: #ede2ad; 
+  color: #366a92;
+}
+
+.descriptionview{
+  width: 93%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
